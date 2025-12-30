@@ -34,7 +34,7 @@ export async function GET(
     if (paste.remaining_views === 0) {
       await redis.del(`paste:${id}`)
     } else {
-      await redis.set(`paste:${id}`, JSON.stringify(paste), { keepttl: true })
+      await redis.set(`paste:${id}`, JSON.stringify(paste), { keepTtl: true })
     }
   }
 
